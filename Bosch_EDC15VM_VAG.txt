@@ -1,0 +1,160 @@
+================================================================================
+         BOSCH EDC15VM+ VAG — DIMSPORT VER 02.01
+================================================================================
+
+Źródło: https://www.scribd.com/document/482361589/Bosch-EDC15VM-VAG
+Autor dokumentu: Dimsport s.r.l. — 15020 Serralunga di Crea (AL) — ITALY
+Tel.: +39 0142 955 201 | WEB: www.dimsport.com
+
+================================================================================
+                    STRONA 1 (wersja włoska)
+================================================================================
+
+Marca: VW - Audi - Seat - Skoda
+
+Modello: Bora, Caravelle, LT, Golf, Passat, Transporter; A3, A4, A6, A8, 
+         Allroad; Ibiza, Leon, Toledo; Octavia, Superb....
+
+Tipo: 1.9 - 2.5 L 8V TDI
+
+ECU: Bosch EDC15VM+19 e +25.
+
+PARAMETRY MODYFIKACJI MAP:
+
+  B1:     dal 60% di LOAD e da 1500 RPM : consigliato Somma Piano 
+          con max +250 numeri
+
+  IF:     se presente, non occorre modifica
+
+  IS:     se presente, non occorre modifica
+
+  TB:     se presente, non occorre modifica
+
+  BS:     dal 50% di LOAD e da 1600 RPM: + 180÷220 numeri 
+          (equivalenti a 180/220 mBar)
+
+  BL,B3:  anche tutta la mappa con + 200÷220 numeri
+
+  QS:     dal 50% di LOAD e da 1500 RPM : max, +12 %
+
+  EG:     se presente, non occorre modifica
+
+  LC:     da 1500 RPM fino al massimo dei giri + 20%
+
+  LF:     dal 30% di LOAD e da 1500 RPM con max. +10 %
+
+Dimsport declina ogni responsabilità da un eventuale uso improprio dei 
+suoi prodotti e/o suggerimenti.
+
+================================================================================
+                    STRONA 2 (wersja angielska)
+================================================================================
+
+DIMSPORT — Bosch EDC15 VM+ — VER 02.01
+
+The information here reported are provided as a reference for an average 
+improvement of the vehicle/engine/ECU type indicated. This improve should 
+follow the logic shown in the values of the original maps. We recommend to 
+use the "Floor sum" function of Race in order to perform a gradual 
+modification. The values here suggested for the improvement can be considered 
+a good starting point, further or higher improvements have to be performed 
+with extreme care and are achieved under customer's own discretion and risk.
+
+Brand: VW - Audi - Seat - Skoda
+
+Model: Bora, Caravelle, LT; Golf, Passat, Transporter; A3, A4, A6, A8, 
+       Allroad; Ibiza, Leon, Toledo; Octavia, Superb....
+
+Type: 1.9 - 2.5 L 8V TDI
+
+ECU: Bosch EDC15VM+19 and +25.
+
+PARAMETRY MODYFIKACJI MAP:
+
+  B1:     from 60% LOAD and 1500 RPM : "Floor Sum" recommended 
+          with max +250 numbers
+
+  IF:     if map is present, no need to touch it
+
+  IS:     if map is present, no need to touch it
+
+  TB:     if map is present, no need to touch it
+
+  BS:     from 50% LOAD and 1600 RPM : + 180÷200 numbers 
+          (equals to 180/200 mBar)
+
+  BL,B3:  all the map + 200÷220 numbers
+
+  QS:     from 50% LOAD and 1500-1800 RPM : +12 % Max.
+
+  EG:     if map is present, no need to touch it
+
+  LC:     from 1300-1500 RPM to max rpm + 20%
+
+  LF:     from 50% LOAD and 1500 RPM, max. +10 %
+
+================================================================================
+                         DISCLAIMER
+================================================================================
+
+Under no circumstances and under no legal theory, tort, contract, or 
+otherwise, shall Dimsport srl or its suppliers, resellers, or licensees 
+be liable for any direct, indirect, special, incidental, or consequential 
+damages of any character including, without limitation, damages for loss of 
+goodwill, stoppage, car failure or malfunction, or any and all other 
+commercial damages or losses. Under no circumstances shall Dimsport srl 
+be considered responsible for an improper use of its tools and/or its 
+suggestions.
+
+================================================================================
+                    OBJAŚNIENIE SKRÓTÓW MAP
+================================================================================
+
+  B1  — Mapa wtrysku (Driver's Wish / Injection Map)
+        Główna mapa dawki paliwa — ilość wtrysku w funkcji obciążenia i RPM
+
+  IF  — Injection Factor
+        Współczynnik korekcji wtrysku
+
+  IS  — Injection Start
+        Początek wtrysku / korekcja
+
+  TB  — Turbo Boost map
+        Mapa ciśnienia doładowania turbo
+
+  BS  — Boost Setpoint
+        Wartość zadana ciśnienia doładowania
+
+  BL  — Boost Limiter
+        Ogranicznik ciśnienia doładowania
+
+  B3  — Boost map 3
+        Dodatkowa mapa boost
+
+  QS  — Quantity Smoke (Smoke Limiter)
+        Limitator dymu — ogranicza dawkę paliwa względem masy powietrza
+
+  EG  — EGR map
+        Mapa recyrkulacji spalin
+
+  LC  — Limiter Charge (Torque Limiter)
+        Ogranicznik momentu obrotowego
+
+  LF  — Limiter Fuel
+        Ogranicznik dawki paliwa
+
+================================================================================
+                    POJAZDY OBJĘTE DOKUMENTEM
+================================================================================
+
+  VW:    Bora, Caravelle, LT, Golf, Passat, Transporter
+  Audi:  A3, A4, A6, A8, Allroad
+  Seat:  Ibiza, Leon, Toledo
+  Skoda: Octavia, Superb
+
+  Silniki: 1.9 - 2.5 L 8V TDI (pompa rotacyjna VP37)
+  ECU:     Bosch EDC15VM+19 i EDC15VM+25
+
+================================================================================
+Transkrypcja wykonana 2026-07-28 z dokumentu Scribd #482361589
+================================================================================

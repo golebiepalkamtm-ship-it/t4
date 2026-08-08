@@ -1,0 +1,204 @@
+================================================================================
+         BOSCH EDC15VM+ VAG — DIMSPORT WERSJA 02.01
+              POLSKA WERSJA DOKUMENTU (tłumaczenie)
+================================================================================
+
+Źródło oryginału: https://www.scribd.com/document/482361589/Bosch-EDC15VM-VAG
+Autor dokumentu: Dimsport s.r.l. — 15020 Serralunga di Crea (AL) — WŁOCHY
+Tel.: +39 0142 955 201 | Strona: www.dimsport.com
+
+================================================================================
+                    INFORMACJE OGÓLNE
+================================================================================
+
+Informacje zawarte w tym dokumencie stanowią punkt odniesienia dla 
+przeciętnej poprawy osiągów wskazanego typu pojazdu/silnika/ECU. 
+Modyfikacja powinna podążać za logiką wartości widocznych w oryginalnych 
+mapach. Zalecamy użycie funkcji "Floor Sum" (Suma Podłogowa) w programie 
+Race w celu wykonania stopniowej modyfikacji. Sugerowane wartości poprawy 
+mogą być traktowane jako dobry punkt wyjścia. Dalsze lub większe 
+modyfikacje muszą być wykonywane z najwyższą ostrożnością i są realizowane 
+na własne ryzyko i odpowiedzialność klienta.
+
+================================================================================
+                    DANE POJAZDU
+================================================================================
+
+  Marka:    VW - Audi - Seat - Skoda
+
+  Modele:   VW:    Bora, Caravelle, LT, Golf, Passat, Transporter
+            Audi:  A3, A4, A6, A8, Allroad
+            Seat:  Ibiza, Leon, Toledo
+            Skoda: Octavia, Superb
+
+  Silnik:   1.9 - 2.5 L 8V TDI (pompa rotacyjna VP37)
+
+  Sterownik: Bosch EDC15VM+19 oraz EDC15VM+25
+
+================================================================================
+              PARAMETRY MODYFIKACJI MAP — INSTRUKCJA
+================================================================================
+
+  B1 — MAPA WTRYSKU (dawka paliwa)
+  ─────────────────────────────────────────────────────────────────
+        Od 60% OBCIĄŻENIA i od 1500 obr/min:
+        Zalecana metoda "Suma Podłogowa" (Floor Sum)
+        Maksymalnie: +250 jednostek
+
+  IF — WSPÓŁCZYNNIK WTRYSKU
+  ─────────────────────────────────────────────────────────────────
+        Jeśli mapa jest obecna — NIE MODYFIKOWAĆ
+
+  IS — POCZĄTEK WTRYSKU
+  ─────────────────────────────────────────────────────────────────
+        Jeśli mapa jest obecna — NIE MODYFIKOWAĆ
+
+  TB — MAPA CIŚNIENIA TURBO
+  ─────────────────────────────────────────────────────────────────
+        Jeśli mapa jest obecna — NIE MODYFIKOWAĆ
+
+  BS — WARTOŚĆ ZADANA CIŚNIENIA DOŁADOWANIA (Boost Setpoint)
+  ─────────────────────────────────────────────────────────────────
+        Od 50% OBCIĄŻENIA i od 1600 obr/min:
+        + 180 do 200 jednostek (odpowiada 180/200 mBar)
+
+  BL, B3 — OGRANICZNIK DOŁADOWANIA / MAPA BOOST 3
+  ─────────────────────────────────────────────────────────────────
+        Cała mapa: + 200 do 220 jednostek
+
+  QS — LIMITATOR DYMU (Smoke Limiter)
+  ─────────────────────────────────────────────────────────────────
+        Od 50% OBCIĄŻENIA i od 1500-1800 obr/min:
+        Maksymalnie: +12 %
+
+  EG — MAPA EGR (recyrkulacja spalin)
+  ─────────────────────────────────────────────────────────────────
+        Jeśli mapa jest obecna — NIE MODYFIKOWAĆ
+
+  LC — OGRANICZNIK MOMENTU OBROTOWEGO (Torque Limiter)
+  ─────────────────────────────────────────────────────────────────
+        Od 1300-1500 obr/min do maksymalnych obrotów:
+        + 20%
+
+  LF — OGRANICZNIK DAWKI PALIWA
+  ─────────────────────────────────────────────────────────────────
+        Od 50% OBCIĄŻENIA i od 1500 obr/min:
+        Maksymalnie: +10 %
+
+================================================================================
+              TABELA PODSUMOWUJĄCA MODYFIKACJE
+================================================================================
+
+  MAPA      ZAKRES OBCIĄŻENIA    ZAKRES RPM        WARTOŚĆ ZMIANY
+  ────      ─────────────────    ──────────        ──────────────
+  B1        od 60% LOAD          od 1500           +250 jedn. (Floor Sum)
+  IF        —                    —                 NIE RUSZAĆ
+  IS        —                    —                 NIE RUSZAĆ
+  TB        —                    —                 NIE RUSZAĆ
+  BS        od 50% LOAD          od 1600           +180÷200 jedn. (mBar)
+  BL,B3     cała mapa            cała mapa         +200÷220 jedn.
+  QS        od 50% LOAD          1500-1800         +12% maks.
+  EG        —                    —                 NIE RUSZAĆ
+  LC        —                    1300-1500 do max  +20%
+  LF        od 50% LOAD          od 1500           +10% maks.
+
+================================================================================
+              SZCZEGÓŁOWY OPIS MAP STEROWNIKA
+================================================================================
+
+  B1 — MAPA WTRYSKU (Driver's Wish / Injection Map)
+        Jest to główna mapa dawki paliwa. Określa ilość wtryskiwanego
+        paliwa w zależności od pozycji pedału gazu (obciążenie) i obrotów
+        silnika (RPM). To najważniejsza mapa przy tuningu — zwiększenie
+        wartości oznacza więcej paliwa = więcej mocy.
+
+  IF — WSPÓŁCZYNNIK WTRYSKU (Injection Factor)
+        Współczynnik korekcji wtrysku. Służy do precyzyjnego dostrojenia
+        ilości paliwa. Przy standardowym tuningu NIE NALEŻY MODYFIKOWAĆ.
+
+  IS — POCZĄTEK WTRYSKU (Injection Start)
+        Określa moment rozpoczęcia wtrysku paliwa. Wpływa na kąt
+        wyprzedzenia wtrysku. Niewłaściwe ustawienie może powodować
+        stuki spalania — NIE MODYFIKOWAĆ bez zaawansowanej wiedzy.
+
+  TB — MAPA CIŚNIENIA TURBO (Turbo Boost Map)
+        Mapa kontrolująca ciśnienie doładowania turbosprężarki.
+        Przy tym poziomie tuningu NIE WYMAGA ZMIAN.
+
+  BS — WARTOŚĆ ZADANA DOŁADOWANIA (Boost Setpoint)
+        Określa docelowe ciśnienie doładowania turbo w zależności od
+        obciążenia i obrotów. Zwiększenie o 180-200 mBar zapewnia
+        więcej powietrza potrzebnego do spalenia dodatkowego paliwa.
+
+  BL — OGRANICZNIK DOŁADOWANIA (Boost Limiter)
+        Ustawia maksymalne dopuszczalne ciśnienie turbo. Musi być
+        podniesiony razem z BS, aby turbo mogło osiągnąć wyższe
+        ciśnienie.
+
+  B3 — DODATKOWA MAPA DOŁADOWANIA (Boost Map 3)
+        Uzupełniająca mapa turbo. Modyfikowana razem z BL.
+
+  QS — LIMITATOR DYMU (Quantity Smoke / Smoke Limiter)
+        Ogranicza maksymalną dawkę paliwa w zależności od ilości
+        powietrza mierzonego przez przepływomierz (MAF). Chroni przed
+        nadmiernym dymem ze spalin. Zwiększenie o 12% pozwala na
+        wtrysk większej ilości paliwa przy zachowaniu akceptowalnego
+        poziomu emisji.
+
+  EG — MAPA EGR (Exhaust Gas Recirculation)
+        Kontroluje zawór recyrkulacji spalin. Przy tym poziomie tuningu
+        NIE MODYFIKOWAĆ. Niektórzy tunerzy decydują się na całkowite
+        wyłączenie EGR, ale wymaga to osobnych korekt.
+
+  LC — OGRANICZNIK MOMENTU OBROTOWEGO (Limiter Charge / Torque Limiter)
+        Definiuje maksymalny moment obrotowy, jaki silnik może
+        wygenerować. Zwiększenie o 20% pozwala na większą moc,
+        ale należy pamiętać o wytrzymałości skrzyni biegów,
+        sprzęgła i dwumasowego koła zamachowego.
+
+  LF — OGRANICZNIK DAWKI PALIWA (Limiter Fuel)
+        Ostateczny ogranicznik ilości wtryskiwanego paliwa.
+        Zwiększenie o maks. 10% to bezpieczna wartość przy
+        standardowych komponentach.
+
+================================================================================
+                    WAŻNE OSTRZEŻENIA
+================================================================================
+
+  1. STOPNIOWOŚĆ — Każda zmiana powinna być wprowadzana stopniowo
+     i proporcjonalnie. Unikaj gwałtownych skoków wartości.
+
+  2. LOGIKA MAP — Modyfikacje powinny podążać za logiką oryginalnych
+     map. Zachowuj proporcje i kształt krzywych.
+
+  3. DATALOGGING — Przed i po modyfikacji wykonuj logi parametrów
+     w czasie rzeczywistym (np. za pomocą VCDS/VAG-COM):
+     - Ciśnienie turbo (aktualne vs. zadane)
+     - Masa powietrza (MAF)
+     - Czasy wtrysku
+     - Temperatura spalin (EGT)
+
+  4. NIE KOPIUJ PLIKÓW — Każdy silnik ma inny stan zużycia.
+     Mapy muszą być tworzone na bazie ORYGINALNEGO pliku Twojego auta.
+
+  5. NARZĘDZIA — Zalecane oprogramowanie: WinOLS z pakietem map (damos)
+     lub Race (Dimsport) z funkcją "Floor Sum".
+
+================================================================================
+              ZASTRZEŻENIE PRAWNE (tłumaczenie)
+================================================================================
+
+W żadnych okolicznościach i na podstawie żadnej teorii prawnej, deliktu, 
+umowy ani w inny sposób, Dimsport srl ani jego dostawcy, sprzedawcy 
+ani licencjobiorcy nie ponoszą odpowiedzialności za jakiekolwiek 
+bezpośrednie, pośrednie, specjalne, przypadkowe lub wynikowe szkody 
+jakiegokolwiek rodzaju, w tym bez ograniczeń za utratę wartości firmy, 
+przestoje, awarię lub wadliwe działanie samochodu, ani za jakiekolwiek 
+inne szkody lub straty handlowe. W żadnych okolicznościach Dimsport srl 
+nie ponosi odpowiedzialności za niewłaściwe użycie swoich narzędzi 
+i/lub sugestii.
+
+================================================================================
+Polska wersja dokumentu — tłumaczenie z oryginału IT/EN
+Transkrypcja wykonana 2026-07-28 z dokumentu Scribd #482361589
+================================================================================
